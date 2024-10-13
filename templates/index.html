@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-chart-bar"></i>
+                <h1>Sentiment Analyzer</h1>
+            </div>
+        </header>
+        <main>
+            <div id="login-section" style="display: none;">
+                <h2><i class="fas fa-user"></i> Login</h2>
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <button id="login-btn" class="analyze-btn">Login</button>
+                <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+            </div>
+            <div id="register-section" style="display: none;">
+                <h2><i class="fas fa-user-plus"></i> Register</h2>
+                <div class="input-group">
+                    <input type="text" id="reg-username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="reg-password" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="reg-confirm-password" placeholder="Confirm Password">
+                </div>
+                <button id="register-btn" class="analyze-btn">Register</button>
+                <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+            </div>
+            <div id="analysis-section" style="display: none;">
+                <div class="user-actions">
+                    <button id="my-results-btn" class="secondary-btn">My Results</button>
+                    <button id="sign-out-btn" class="secondary-btn">Sign Out</button>
+                </div>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="input-section">
+                        <h2><i class="fas fa-file-csv"></i> Upload CSV File</h2>
+                        <p>Choose a CSV file containing text to analyze:</p>
+                        <input type="file" name="file" accept=".csv" id="file-upload">
+                        <label for="file-upload" class="file-upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose File
+                        </label>
+                    </div>
+                    <div class="input-section">
+                        <h2><i class="fas fa-keyboard"></i> Or Enter Text</h2>
+                        <p>Type or paste text to analyze:</p>
+                        <textarea name="text_input" rows="4" placeholder="Enter your text here..."></textarea>
+                    </div>
+                    <button type="submit" class="analyze-btn">
+                        <i class="fas fa-search"></i> Analyze Sentiment
+                    </button>
+                </form>
+                <div id="progress-bar-container" style="display: none;">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <script>
+        var socket = io();
+        socket.on('progress_update', function(data) {
+            document.getElementById('progress-bar-container').style.display = 'block';
+            document.getElementById('progress-bar').style.width = data.progress + '%';
+        });
+
+        // File upload label update
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            var fileName = e.target.files[0].name;
+            document.querySelector('.file-upload-label').textContent = fileName;
+        });
+    </script>
+</body>
+</html>

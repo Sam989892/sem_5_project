@@ -1,0 +1,11 @@
+review_id,product_id,user_id,rating,review_text,review_date,sentiment
+R1ABC123DEF,B00X4WHP5E,U12345,4,These wireless earbuds are great! The sound quality is impressive and they're comfortable to wear for long periods. Battery life is solid too. Only downside is the case feels a bit cheap.,2023-03-15,Neutral
+R2GHI456JKL,B00X4WHP5E,U67890,2,Disappointed with these earbuds. They kept disconnecting from my phone and the touch controls are too sensitive. Not worth the price.,2023-03-18,Neutral
+R3MNO789PQR,B07X6C9RMF,U13579,5,This coffee maker is a game changer! It's so easy to use and the coffee tastes amazing. I love the programmable feature - waking up to fresh coffee is the best.,2023-03-20,Neutral
+R4STU012VWX,B07X6C9RMF,U24680,3,"The coffee maker works fine, but it's louder than I expected. Also, the carafe doesn't pour as smoothly as I'd like. It's okay for the price though.",2023-03-22,Neutral
+R5YZA345BCD,B08L5P1PZ7,U11111,1,Terrible product! The smart bulb wouldn't connect to my Wi-Fi no matter what I tried. Waste of time and money.,2023-03-25,Neutral
+R6EFG678HIJ,B08L5P1PZ7,U22222,4,Pretty good smart bulb. Easy to set up and the app works well. I knocked off a star because the colors aren't as vibrant as I hoped.,2023-03-28,Neutral
+R7KLM901NOP,B01NBKTPTS,U33333,5,This air fryer is fantastic! It cooks food quickly and evenly. Clean-up is a breeze too. Highly recommend for anyone looking to eat healthier.,2023-04-01,Neutral
+R8QRS234TUV,B01NBKTPTS,U44444,2,Not impressed with this air fryer. It takes up too much counter space and the non-stick coating started peeling after a few uses.,2023-04-03,Neutral
+R9WXY567ZAB,B07PXGQC1Q,U55555,3,"The laptop stand is sturdy and looks nice on my desk. However, it's not as adjustable as I'd like. It works, but I wish I had more height options.",2023-04-06,Neutral
+R10CDE890FGH,B07PXGQC1Q,U66666,5,Love this laptop stand! It's improved my posture and reduced neck strain. The build quality is excellent and it looks sleek. Great purchase!,2023-04-09,Neutral
