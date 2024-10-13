@@ -1,4 +1,0 @@
-   text,sentiment
-"   ""This is a positive sentence.""",Positive
-"   ""This is a negative sentence.""",Negative
-"   ""This is a neutral sentence.""",Neutral
