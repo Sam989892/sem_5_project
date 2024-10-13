@@ -17,8 +17,7 @@ A web application for analyzing sentiment in text and CSV files.
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/sentiment-analyzer.git
-   cd sentiment-analyzer
+   git clone https://github.com/Sam989892/sem_5_project.git
    ```
 
 2. Install dependencies:
