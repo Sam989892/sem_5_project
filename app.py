@@ -4,7 +4,6 @@ from flask import Flask, render_template, request, send_file, redirect, url_for,
 from textblob import TextBlob
 from io import BytesIO, StringIO
 import base64
-import tweepy
 from flask_socketio import SocketIO, emit
 import json
 import os
@@ -46,16 +45,6 @@ def generate_graph(results):
     
     return f'data:image/png;base64,{graph_url}'
 
-def get_tweets(username, count=10):
-    try:
-        auth = tweepy.OAuthHandler(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET)
-        auth.set_access_token(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
-        api = tweepy.API(auth)
-        
-        tweets = api.user_timeline(screen_name=username, count=count, tweet_mode='extended')
-        return [tweet.full_text for tweet in tweets]
-    except tweepy.TweepyException as e:
-        raise Exception(f"Twitter API error: {str(e)}")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
